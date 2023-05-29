@@ -1,0 +1,25 @@
+package Cookies;
+
+import java.util.Set;
+
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CookiesPractice {
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.instagram.com");
+		Set<Cookie> allCookies = driver.manage().getCookies();
+		System.out.println(allCookies.size());
+		for(Cookie singleCookie:allCookies)
+		System.out.println(singleCookie.getName());	
+		Cookie temp=new Cookie("Selenium", "6");
+		driver.manage().addCookie(temp);
+		allCookies=driver.manage().getCookies();
+		System.out.println(allCookies.size());
+		for(Cookie singleCookie:allCookies)
+	    System.out.println(singleCookie.getName());
+	}
+
+}
