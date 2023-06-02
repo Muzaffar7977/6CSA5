@@ -1,16 +1,19 @@
-package SearchContext;
+package FindElementPractice;
+
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FindElement {
+public class FindElements4 {
   public static void main(String[] args) {
 	WebDriver driver=new ChromeDriver();
-	driver.get("https://www.whatsapp.com");
 	driver.manage().window().maximize();
-	driver.findElements(By.tagName("div"));
+	driver.get("https://www.tata.com");
+	List<WebElement> element = driver.findElements(By.tagName("li"));
+	System.out.println(element.size());
 	System.out.println("element identified");
-
 }
 }
